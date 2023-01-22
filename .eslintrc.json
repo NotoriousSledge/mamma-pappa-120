@@ -39,6 +39,6 @@
     "jsdoc/require-jsdoc": "off",
     "indent": ["off"],
     "quote-props": ["off"],
-    "jsdoc/valid-typed": "off"
+    "jsdoc/valid-types": "off"
   }
 }
