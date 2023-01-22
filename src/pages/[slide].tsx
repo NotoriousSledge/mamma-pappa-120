@@ -37,6 +37,6 @@ export async function getStaticPaths() {
     paths: Array.from({length}, (_, index) => ({
       params: {slide: `${index + 1}`},
     })),
-    fallback: true, // can also be true or 'blocking'
+    fallback: false, // can also be true or 'blocking'
   };
 }

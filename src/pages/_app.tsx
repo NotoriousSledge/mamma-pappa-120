@@ -2,6 +2,7 @@ import {type AppType} from 'next/dist/shared/lib/utils';
 
 import '../styles/globals.css';
 import Head from 'next/head';
+import {FadeProvider} from '../components/fade_provider';
 
 const MyApp: AppType = ({Component, pageProps}) => {
   return (
@@ -14,7 +15,9 @@ const MyApp: AppType = ({Component, pageProps}) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Component {...pageProps} />
+      <FadeProvider>
+        <Component {...pageProps} />
+      </FadeProvider>
     </>
   );
 };

@@ -1,33 +1,27 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import {Routing} from './routing';
 
 type SlideProps = {
-  index: number;
+  index: number | undefined;
   length: number;
 };
 
 export const Slide = ({index, length}: SlideProps) => {
+  if (index === undefined) {
+    return <></>;
+  }
+
   return (
     <>
-      <main className="w-screen">
+      <main className="absolute top-0 h-screen w-screen">
         <Image
           src={`./slides/slide-${index}.svg`}
           fill
           priority
           alt={`Slide number ${index} of ${length}`}
         />
-        {index !== 1 && (
-          <Link
-            href={`slide-${index - 1}`}
-            className="absolute left-0 h-screen w-1/4 opacity-10 duration-300 ease-in-out hover:bg-black"
-          />
-        )}
-        {index !== length && (
-          <Link
-            href={`slide-${index + 1}`}
-            className="absolute right-0 h-screen w-1/4 opacity-10 duration-300 ease-in-out hover:bg-black"
-          />
-        )}
+        <Routing side="left" to={index - 1} hide={index === 1} />
+        <Routing side="right" to={index + 1} hide={index === length} />
       </main>
     </>
   );
