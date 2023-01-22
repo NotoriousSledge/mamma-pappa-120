@@ -16,7 +16,7 @@ export const FadeProvider = ({children}: {children: React.ReactNode}) => {
   }, [setIsVisible]);
 
   const onRouteExit = useCallback(() => {
-    setTimeout(() => setIsVisible(true), 500);
+    setTimeout(() => setIsVisible(true), 200);
   }, [setIsVisible]);
 
   useEffect(() => {
