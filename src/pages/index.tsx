@@ -1,12 +1,16 @@
-import {type NextPage} from 'next';
-import {Slide} from '../components/slide';
+import type {GetServerSideProps, NextPage} from 'next';
 
 const Home: NextPage = () => {
-  return (
-    <>
-      <Slide index={1} length={2}></Slide>
-    </>
-  );
+  return <></>;
 };
 
 export default Home;
+
+export const getServerSideProps: GetServerSideProps = async ({}) => {
+  return {
+    redirect: {
+      destination: '/slide-1',
+      permanent: true,
+    },
+  };
+};

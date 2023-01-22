@@ -10,7 +10,7 @@ const MyApp: AppType = ({Component, pageProps}) => {
         <title>Mamma och Pappa 120 år</title>
         <meta
           name="description"
-          content="En presentation för Mamma och Pappa på 120 års dagen"
+          content="En presentation för Mamma och Pappa på 120-årsdagen"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
