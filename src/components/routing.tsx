@@ -7,6 +7,7 @@ type RoutingProps = {
 };
 
 export const Routing = ({to, side, hide}: RoutingProps) => {
+  const sideClass = side === 'right' ? 'right-0' : 'left-0';
   if (hide) {
     return <></>;
   }
@@ -14,7 +15,7 @@ export const Routing = ({to, side, hide}: RoutingProps) => {
   return (
     <Link
       href={`slide-${to}`}
-      className={`absolute ${side}-0 h-screen w-1/4 opacity-10 duration-100 ease-in-out md:hover:bg-black`}
+      className={`absolute ${sideClass} h-screen w-1/4 opacity-10 duration-100 ease-in-out md:hover:bg-black`}
     />
   );
 };

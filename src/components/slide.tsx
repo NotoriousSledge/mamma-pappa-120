@@ -1,13 +1,16 @@
 import Image from 'next/image';
 import {Routing} from './routing';
+import {useRouter} from 'next/router';
 
 type SlideProps = {
   index: number | undefined;
-  length: number;
+  length: number | undefined;
 };
 
 export const Slide = ({index, length}: SlideProps) => {
-  if (index === undefined) {
+  const {isFallback} = useRouter();
+
+  if (isFallback || index === undefined || length === undefined) {
     return <></>;
   }
 
